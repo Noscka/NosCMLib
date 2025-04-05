@@ -9,6 +9,8 @@ project ("NosCMLib" VERSION ${GIT_VERSION} LANGUAGES CXX)
 
 include(CMakePackageConfigHelpers)
 
+include(GNUInstallDirs)
+
 write_basic_package_version_file(
 	"${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}ConfigVersion.cmake"
 	VERSION ${PROJECT_VERSION}
@@ -27,5 +29,5 @@ install(FILES
 	"${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}Config.cmake"
 	"${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}ConfigVersion.cmake"
 	${CMakeFunctionFiles}
-	DESTINATION ${CMAKE_INSTALL_LIBDIR}/CMake/${PROJECT_NAME}
+	DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/${PROJECT_NAME}
 )
