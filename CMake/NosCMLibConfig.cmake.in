@@ -1,0 +1,5 @@
+@PACKAGE_INIT@
+
+include("${CMAKE_CURRENT_LIST_DIR}/Versioning.cmake")
+
+include("${CMAKE_CURRENT_LIST_DIR}/NosCMLibTargets.cmake")
