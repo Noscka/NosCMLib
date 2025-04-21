@@ -76,7 +76,7 @@ function(InstallProject TargetName)
 		PUBLIC_HEADER DESTINATION ${inst_inc}
 	)
 
-	install(DIRECTORY ${inst_inc} DESTINATION ${inst_inc})
+	install(DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/Include/${pkg_name}" DESTINATION ${inst_inc})
 
 	# 4) Export targets file
 	install(EXPORT ${pkg_name}Targets
@@ -90,8 +90,6 @@ function(InstallProject TargetName)
 		"${CMAKE_CURRENT_SOURCE_DIR}/CMake/${pkg_name}Config.cmake.in"
 		"${CMAKE_CURRENT_BINARY_DIR}/${pkg_name}Config.cmake"
 		INSTALL_DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/${cm_subdir}
-		NO_SET_AND_CHECK_MACRO
-		NO_CHECK_REQUIRED_COMPONENTS_MACRO
 	)
 
 	write_basic_package_version_file(
